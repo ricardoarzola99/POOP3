@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.GregorianCalendar;
 import java.util.Hashtable;
 public class POOP3 {
 public static void main(String[] args){
@@ -103,4 +104,48 @@ fechaActual +=calendarioHoy.get(Calendar.MONTH)+" del año ";
 fechaActual +=calendarioHoy.get(Calendar.YEAR);
 System.out.println("Fecha de hoy");
 System.out.println(fechaActual);
-}}
+System.out.println("");
+System.out.println("Diccionario");
+Hashtable<String,String>dic=new Hashtable<String,String>(); 
+dic.put("coacción","presión, fuerza o violencia de tipo físico psíquico o moral que se ejerce sobre una persona para obligarla a que haga o diga algo contra su voluntad");
+dic.put("admonición","discurso con que se hace ver un mal y se invita a corregirse");
+dic.put("sobreseimiento"," tipo de resolución judicial que dicta un juez o tribunal, supendiendo un proceso por falta de causas que justifiquen la acción de la justicia");
+dic.put("anexión","proceso generalmente violento, por el cual un Estado o país se apodera de otro, destruyendo, trasladando o integrando todas o parte de sus instituciones");
+dic.put("circunspección","seriedad o reserva de una persona al hablar o acturar, para comportarse comedidamente");
+String clave1;
+String valor1;
+Enumeration<String> claves1=dic.keys();
+while(claves1.hasMoreElements()){
+clave1=claves1.nextElement();
+valor1=dic.get(clave1);
+System.out.println("Palabra: "+clave1+", Significado: "+valor1);}
+System.out.println("");
+System.out.println("Agenda");
+Hashtable<String,String>agenda=new Hashtable<String,String>(); 
+Calendar fecha =  GregorianCalendar.getInstance();
+fecha.add(Calendar.YEAR,- 20);
+Calendar fecha1 =  Calendar.getInstance();
+fecha1.add(Calendar.YEAR,-30);
+Calendar fecha2 =  Calendar.getInstance();
+fecha2.add(Calendar.YEAR,-44);
+Calendar fecha3 =  Calendar.getInstance();
+fecha3.add(Calendar.YEAR,-33);
+Calendar fecha4 =  Calendar.getInstance();
+fecha4.add(Calendar.YEAR,-25);
+String str=fecha.toString();
+String str1=fecha1.toString();
+String str2=fecha2.toString();
+String str3=fecha3.toString();
+String str4=fecha4.toString();
+agenda.put("Ricardo Arzola",fecha.getTime().toLocaleString());
+agenda.put("Roberto Rodríguez",fecha1.getTime().toLocaleString());
+agenda.put("Erick Rodríguez",fecha2.getTime().toLocaleString());
+agenda.put("Yael Valdez",fecha3.getTime().toLocaleString());
+agenda.put("Antonio Carrillo",fecha4.getTime().toLocaleString());
+String clave2;
+String valor2;
+Enumeration<String> claves2=agenda.keys();
+while(claves2.hasMoreElements()){
+clave2=claves2.nextElement();
+valor2=agenda.get(clave2);
+System.out.println("Nombre: "+clave2+", Cumpleaños: "+valor2);}}}
